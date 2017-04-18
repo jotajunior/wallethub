@@ -1,20 +1,18 @@
 FROM ubuntu
 MAINTAINER jota.junior@beblue.com.br
 
-RUN apt-get update && apt-get install -y python3 \
+RUN apt-get update && \
+	apt-get install -y python3 \
 	libpq-dev \
 	python3-pip  \
 	python3-numpy \
-	python3-matplotlib \
 	python3-pandas \
 	gfortran \
 	libblas-dev \
 	liblapack-dev \
 	libatlas-base-dev \
 	python3-dev \
-	python3-setuptools \
-	bash-completion \
-	python3-scipy
+	git
 
 COPY . /wallethub
 WORKDIR /wallethub
