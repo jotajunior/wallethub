@@ -2,7 +2,6 @@ FROM ubuntu
 MAINTAINER jota.junior@beblue.com.br
 
 RUN apt-get update && apt-get install -y python3 \
-	python3-psycopg2 \
 	libpq-dev \
 	python3-pip  \
 	python3-numpy \
