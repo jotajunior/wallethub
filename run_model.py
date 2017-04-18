@@ -1,7 +1,7 @@
 from sklearn.neural_network import MLPRegressor
 from sklearn.externals import joblib
 import random
-from .parse_data import parse
+from parse_data import parse_training
 
 def fit_model(x, y, x_test=None, y_test=None):
     alpha = 0.0001
@@ -49,7 +49,7 @@ def test_model(x, y, n=1):
         print()
 
 def build_model(filename, dump_name='regressor.pkl'):
-    x, y = parse(filename)
+    x, y = parse_training(filename)
     reg, accuracy, r2 = fit_model(x, y)
 
     joblib.dump(reg, dump_name)
